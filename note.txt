@@ -1,0 +1,11 @@
+npm: node package manager, để tải thư viện cho Nodejs
+
+npm = quản lý thư viện & script.
+
+npm i = cài thư viện (đọc từ package.json).
+
+npm run dev = chạy lệnh "dev" trong package.json → thường là bật server dev để chạy project.
+
+Dấu ^ trong package.json là khi tải về nó sẽ cập nhật mới nhất (vd: ^5.2.12 nhưng sau 1 năm tải có thể ^6.0). Nếu muốn vẫn giữ 5.2.12 thì phải bỏ dấu ^ đi
+
+react có cơ chế dịch code "hot reloading" -> mỗi lần lưu code nó thay đổi luôn, ko cần live server
