@@ -9,3 +9,17 @@ npm run dev = chạy lệnh "dev" trong package.json → thường là bật ser
 Dấu ^ trong package.json là khi tải về nó sẽ cập nhật mới nhất (vd: ^5.2.12 nhưng sau 1 năm tải có thể ^6.0). Nếu muốn vẫn giữ 5.2.12 thì phải bỏ dấu ^ đi
 
 react có cơ chế dịch code "hot reloading" -> mỗi lần lưu code nó thay đổi luôn, ko cần live server
+
+.jsx : react code với Javascript
+.tsx: react code với Typescript
+Có nhiều code .js mà vẫn chạy React đc vì có thư viện react-scripts (trong dependencies), còn bài này dùng vite ko hỗ trợ nên .js sẽ chạy sai
+
+npm run dev = tiện lợi cho lập trình, code dễ đọc, dễ debug, reload nhanh, nhưng chậm và nặng nếu mang đi dùng thật.
+npm run build + preview = phiên bản gọn nhẹ, nhanh, giống như khi website chạy trên server thật, nhưng khó debug
+
+Quy trình: src code -> Vite biên dịch -> HTML, CSS, JS -> Browser render (render là chuyển dữ liệu + code thành giao diện cho ng dùng)
+
+SSR: khi chuyển trang thì web phải reload lại
+CSR: khi chuyển trang thì web ko cần reload lại
+
+component: tăng tính tái sử dụng code (reuse)
