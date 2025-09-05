@@ -23,3 +23,5 @@ SSR: khi chuyển trang thì web phải reload lại
 CSR: khi chuyển trang thì web ko cần reload lại
 
 component: tăng tính tái sử dụng code (reuse)
+
+giữ phím ctrl+click vào import Component (click vào Component), nếu nó nhảy đến đúng file mình import thì là đúng, ko thì sai
