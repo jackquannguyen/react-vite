@@ -1,4 +1,4 @@
-// 1) props là 1 Object {}, do đó có thể khai báo: 
+// 1) props là 1 Object {}, do đó có thể lấy props bằng khai báo: 
 // const {name, age, data} = props, ý là const name = props.name, const age = props.age, const data = props.data
 // 2) phải truyền props vào Funktionskopf thì mới gọi đc trong hàm
 // 3) còn nhiều cách truyền khác như {props.name} (ko cần k.báo const {name, age, data} = props) hay const ToDoData = ({name}) => {...}, tuy nhiên
@@ -12,7 +12,7 @@
 // }
 
 const ToDoData = (props) => {
-  const { name, age, data } = props;
+  const { name, age, data } = props; //cú pháp JS
   console.log("Check props: ", props);
 
   return (

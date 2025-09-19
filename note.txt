@@ -31,3 +31,12 @@ const var = [...] / object mà để in ra thì: {JSON.stringify(var)}
 Dùng inline style thì phải có 2 dấu {{}}, dấu ngoài cùng là tượng trưng viết code JS trong HTML, dấu bên trong là tượng trưng cho Object
 
 Dấu { } cho phép code JS trong HTML !!!
+
+1) Data có thể được truyền từ Comp cha sang Comp con, và được lấy thông qua biến props (như App là comp cha, ToDoData là component con, props gồm 
+{name, age, data} đc truyền từ App sang ToDoData)
+
+1) props là 1 Object {}, do đó có thể khai báo: 
+const {name, age, data} = props, ý là const name = props.name, const age = props.age, const data = props.data
+2) phải truyền props vào Funktionskopf thì mới gọi đc trong hàm
+3) còn nhiều cách truyền khác như {props.name} (ko cần k.báo const {name, age, data} = props) hay const ToDoData = ({name}) => {...}, tuy nhiên
+beginner chưa nên học 

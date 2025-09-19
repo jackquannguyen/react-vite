@@ -7,17 +7,25 @@ import reactLogo from './assets/react.svg';
 // {name, age, data} đc truyền từ App sang ToDoData)
 const App = () => {
 
+  //B1: định nghĩa data tại cha
   const ten = "Quan Nguyen";
   const age = 22;
   const data = { country: "vietnam", city: "HCM" };
+
+  const addNewTodo = (name) => {
+    alert(`call me ${name}`) //lưu ý dùng dấu `` để truyền biến JS (${...}) vào, ko dùng "" đc
+  }
 
   //{key:value}
   return (
     <>
       <div className="todo-container">
         <div className="todo-title">Todo List</div>
-        <ToDoNew />
+        <ToDoNew
+          addNewTodo={addNewTodo} //Lưu ý truyền đúng tên thôi (kể cả hàm), ko truyền thêm dấu () -> vì nó nghĩa là thực thi
+        />
         <ToDoData
+          //B2: truyền data sang con
           name={ten}
           age={age}
           data={data}
