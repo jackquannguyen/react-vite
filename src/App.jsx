@@ -22,7 +22,7 @@ const App = () => {
       <div className="todo-container">
         <div className="todo-title">Todo List</div>
         <ToDoNew
-          addNewTodo={addNewTodo} //Lưu ý truyền đúng tên thôi (kể cả hàm), ko truyền thêm dấu () -> vì nó nghĩa là thực thi
+          addNewTodo={addNewTodo} //Lưu ý truyền đúng tên thôi (kể cả hàm -> tham chiếu), ko truyền thêm dấu () -> vì nó nghĩa là thực thi
         />
         <ToDoData
           //B2: truyền data sang con

@@ -40,3 +40,13 @@ const {name, age, data} = props, ý là const name = props.name, const age = pro
 2) phải truyền props vào Funktionskopf thì mới gọi đc trong hàm
 3) còn nhiều cách truyền khác như {props.name} (ko cần k.báo const {name, age, data} = props) hay const ToDoData = ({name}) => {...}, tuy nhiên
 beginner chưa nên học 
+
+Lưu ý: khi gọi hàm trong DOM Events hay truyền props ko có dấu () !!!, vì như thế JS sẽ tự thực thi ngay cả khi Event chưa xảy ra/props chưa gọi
+
+Lệnh console.log ko cout ra web, mà cout ra "Console" trong F12
+
+#36: DOM Events
+Lưu ý (truyền hàm ko tham số): ko phải handleClick() vì như thế khi load trang nó đã alert, do dấu () nghĩa là thực thi ngay
+Lưu ý (truyền hàm có tham số): ko đc truyền vào onChange={handleOnChange(event.target.value)} vì như thế khi reload code tự thực thi ngay mà ko 
+ăn Event 
+Để truyền tham số vào hàm -> onChange = {(event) => handleOnChange(event.target.value)} 
