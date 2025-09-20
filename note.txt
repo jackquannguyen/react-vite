@@ -30,6 +30,8 @@ const var = [...] / object mà để in ra thì: {JSON.stringify(var)}
 
 Dùng inline style thì phải có 2 dấu {{}}, dấu ngoài cùng là tượng trưng viết code JS trong HTML, dấu bên trong là tượng trưng cho Object
 
+lưu ý dùng dấu `` để truyền biến JS (${...}) vào, ko dùng "" đc
+
 Dấu { } cho phép code JS trong HTML !!!
 
 1) Data có thể được truyền từ Comp cha sang Comp con, và được lấy thông qua biến props (như App là comp cha, ToDoData là component con, props gồm 
@@ -57,3 +59,7 @@ const [name, setName] = useState(""); //giá trị đầu là biến (name), set
 (*) Dùng prop khi cần truyền data từ cha sang con 
 Bản chất của State là bộ nhớ của React
 ToDoNew muốn truyền props sang ToDoData nhưng ko đc ? 
+
+#38: 
+setTodoList([...todoList, newTodo]); //'...todoList' để tạo bản copy todoList (spread syntax), thêm newTodo vào todoList 
+Lưu ý: ko dùng todoList.push(newTodo) vì đây là mutate biến state (ko đc khuyến khích) và có thể gây bug trong dự án lớn

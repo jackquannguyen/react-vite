@@ -11,6 +11,7 @@ const ToDoNew = (props) => { //do truyền function từ cha -> con nên phải 
 
   const handleClick = () => {
     console.log("Check valueInput", valueInput)
+    addNewTodo(valueInput) //khi click "Add" thì gọi addNewTodo 
   }
 
   const handleOnChange = (name) => {

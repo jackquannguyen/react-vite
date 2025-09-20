@@ -4,7 +4,6 @@ import ToDoNew from './components/todo/ToDoNew';
 import ToDoData from './components/todo/ToDoData';
 import reactLogo from './assets/react.svg';
 
-
 // 1) Data có thể được truyền từ Comp cha sang Comp con, và được lấy thông qua biến props (như App là comp cha, ToDoData là component con, props gồm 
 // {name, age, data} đc truyền từ App sang ToDoData)
 const App = () => {
@@ -19,7 +18,16 @@ const App = () => {
   const data = { country: "vietnam", city: "HCM" };
 
   const addNewTodo = (name) => {
-    alert(`call me ${name}`) //lưu ý dùng dấu `` để truyền biến JS (${...}) vào, ko dùng "" đc
+    const newTodo = {
+      id: randomIntFromInterval(1, 100),
+      name: name
+    }
+
+    setTodoList([...todoList, newTodo]); //...todoList để tạo bản copy todoList (spread syntax), thêm newTodo vào todoList
+  }
+
+  const randomIntFromInterval = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   //{key:value}
