@@ -1,13 +1,19 @@
+import { useState } from "react"
 import './components/todo/todo.css';
 import ToDoNew from './components/todo/ToDoNew';
 import ToDoData from './components/todo/ToDoData';
 import reactLogo from './assets/react.svg';
+
 
 // 1) Data có thể được truyền từ Comp cha sang Comp con, và được lấy thông qua biến props (như App là comp cha, ToDoData là component con, props gồm 
 // {name, age, data} đc truyền từ App sang ToDoData)
 const App = () => {
 
   //B1: định nghĩa data tại cha
+  const [todoList, setTodoList] = useState([
+    { id: 1, name: "Learning React" },
+    { id: 2, name: "Watching Youtube" }
+  ])
   const ten = "Quan Nguyen";
   const age = 22;
   const data = { country: "vietnam", city: "HCM" };
@@ -29,6 +35,7 @@ const App = () => {
           name={ten}
           age={age}
           data={data}
+          todoList={todoList}
         // phải khai báo key để lưu value truyền từ App, nếu ko sẽ ko gọi đc trong ToDoData.jsx
         />
         <div className='todo-image'><img src={reactLogo} className='logo' /></div>

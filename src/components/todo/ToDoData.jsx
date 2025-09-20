@@ -12,7 +12,7 @@
 // }
 
 const ToDoData = (props) => {
-  const { name, age, data } = props; //cú pháp JS
+  const { name, age, data } = props; //cú pháp JS -> mục đích để ko cần phải gọi props.name... mới in ra đc mà chỉ cần gọi name. Nhưng nếu ko có cũng ko sao 
   console.log("Check props: ", props);
 
   return (
@@ -20,6 +20,11 @@ const ToDoData = (props) => {
       <div>Hello {name}</div>
       <div>Learning React </div>
       <div>Watch youtube</div>
+      <div>
+        {JSON.stringify(props.todoList)}
+      </div>
+      {/* Lưu ý: JS ko in ra đc {array}, tức ko thể truyền <div>{todoList}</div> vì sẽ bug 
+      Phải truyền {JSON.stringify(array)} thì mới in đc*/}
     </div>
   )
 }

@@ -1,15 +1,20 @@
+import { useState } from "react"
+
 
 const ToDoNew = (props) => { //do truyền function từ cha -> con nên phải có props để lấy func
   console.log("Check props ", props)
   const { addNewTodo } = props;
   //addNewTodo("clean the house");
 
+  //useState hook (const [biến, hàm] = useState(type_biến))
+  const [valueInput, setValueInput] = useState("");
+
   const handleClick = () => {
-    alert("clicked")
+    console.log("Check valueInput", valueInput)
   }
 
-  const handleOnChange = (value) => {
-    console.log("handleOnChange", value)
+  const handleOnChange = (name) => {
+    setValueInput(name)
   }
 
   return (
@@ -21,6 +26,9 @@ const ToDoNew = (props) => { //do truyền function từ cha -> con nên phải 
         style={{ cursor: "pointer" }}
         onClick={handleClick} //lưu ý: ko phải handleClick() vì như thế khi load trang nó đã alert, do dấu () nghĩa là thực thi ngay
       >Add</button>
+      <div>
+        My name is {valueInput}
+      </div>
     </div>
   )
 }
